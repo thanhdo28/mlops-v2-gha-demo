@@ -16,11 +16,7 @@ jobs:
         environment_file:  mlops/azureml/train/train-env.yml
         conda_file: data-science/environment/train-conda.yml
       secrets:
-        azure_creds: ${{ secrets.AZURE_CREDENTIALS }}
-        clientId: ${{ secrets.ARM_CLIENT_ID }}
-        clientSecret: ${{ secrets.ARM_CLIENT_SECRET }}
-        subscriptionId: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        tenantId: ${{ secrets.ARM_TENANT_ID }}
+        creds: ${{secrets.AZURE_CREDENTIALS}}
           
   register-dataset:
     needs: get-config
